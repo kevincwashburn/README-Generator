@@ -1,6 +1,7 @@
-var api = require("./utils/api");
-var generateMarkdown = require("./utils/generateMarkdown");
-var inquirer = require("inquirer");
+const api = require("./utils/api");
+const generateMarkdown = require("./utils/generateMarkdown");
+const inquirer = require("inquirer");
+const fs = require("fs");
 
 const questions = [
     {
@@ -11,7 +12,7 @@ const questions = [
     {
         type: "input",
         message: "What is your email address?",
-        name: "email"
+        name: "contact"
     },
     {
         type: "input",
@@ -55,10 +56,23 @@ const questions = [
 ]
 
 function writeToFile(fileName, data) {
+    console.log(fileName);
+    console.log(data);
+    fs.writeFile(fileName, data, function(err) {
+        if(err) {
+            console.log(err)
+        };
+    });
 }
 
 function init() {
-
-}
+    inquirer.prompt(questions).then(function(answers) {
+        
+        api.getUser(answers.username).then(function(response) {
+        
+            writeToFile("goodReadMe.md", generateMarkdown({...answers, ...response.data}));
+        });
+    });
+};
 
 init();
