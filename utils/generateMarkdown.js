@@ -1,5 +1,5 @@
 function generateMarkdown(data) {
-  // console.log("INSIDE GEN MD", data)
+
   return `
 # ${data.project}
 
@@ -48,15 +48,3 @@ If you have any questions about the repo, open an issue or contact [${data.usern
 
 module.exports = generateMarkdown;
 
-
-
-
-// * Table of Contents
-// * Installation
-// * Usage
-// * License
-// * Contributing
-// * Tests
-// * Questions
-//   * User GitHub profile picture
-//   * User GitHub email

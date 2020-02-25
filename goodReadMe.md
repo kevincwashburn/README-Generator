@@ -1,10 +1,10 @@
 
-# homework
+# Test
 
-![license-badge](https://img.shields.io/badge/license-MIT-blue)
+![license-badge](https://img.shields.io/badge/license-GPL%203.0-blue)
 
 ## Description
-description
+Description
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ npm install
 nothing
 
 ## License
-This project is licensed under the MIT license.
+This project is licensed under the GPL 3.0 license.
 
 ## Contributing
 nothing
